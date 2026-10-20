@@ -1,0 +1,30 @@
+{
+  "extensionName": "TurboWarp-UUID",
+  "blocks": [
+    {
+      "opcode": "generateV4",
+      "blockType": "REPORTER",
+      "text": "generate UUID v4",
+      "description": "Returns a new lowercase UUID v4 using cryptographically secure random bytes. Store the result in a variable to reuse it.",
+      "disableMonitor": true,
+      "arguments": {}
+    },
+    {
+      "opcode": "generateV7",
+      "blockType": "REPORTER",
+      "text": "generate UUID v7",
+      "description": "Returns a new lowercase UUID v7 containing the current Unix time in milliseconds and secure random bits. Ordering within a millisecond or after a clock rollback is not guaranteed.",
+      "disableMonitor": true,
+      "arguments": {}
+    },
+    {
+      "opcode": "isUuid",
+      "blockType": "BOOLEAN",
+      "text": "[UUID] is a UUID?",
+      "description": "Checks a complete, hyphenated UUID string, case-insensitively. Accepts versions 1–8 with the RFC variant, plus Nil and Max UUIDs. Rejects spaces, braces, URN prefixes and missing hyphens. This checks format only, not uniqueness or authenticity.",
+      "arguments": {
+        "UUID": {"type": "STRING", "defaultValue": "017f22e2-79b0-7cc3-98c4-dc0c0c07398f"}
+      }
+    }
+  ]
+}

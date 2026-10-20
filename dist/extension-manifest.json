@@ -1,0 +1,27 @@
+{
+  "formatVersion": 1,
+  "id": "kubohiroyauuid",
+  "blocks": [
+    {
+      "opcode": "generateV4",
+      "blockType": "REPORTER",
+      "arguments": []
+    },
+    {
+      "opcode": "generateV7",
+      "blockType": "REPORTER",
+      "arguments": []
+    },
+    {
+      "opcode": "isUuid",
+      "blockType": "BOOLEAN",
+      "arguments": [
+        {
+          "id": "UUID",
+          "type": "STRING"
+        }
+      ]
+    }
+  ],
+  "menus": []
+}

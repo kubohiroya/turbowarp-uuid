@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "productName": "TurboWarp-UUID",
+  "packageType": "extension",
+  "licensePolicy": "mpl-2.0",
+  "readmeLanguages": [
+    "en",
+    "ja"
+  ],
+  "canonicalReadme": "README.md",
+  "localizedReadmes": {
+    "ja": "README.ja.md"
+  },
+  "node": {
+    "minimum": "22.18.0"
+  },
+  "packageManager": "pnpm",
+  "requiredFiles": [
+    "README.md",
+    "README.ja.md",
+    "LICENSE"
+  ],
+  "exceptions": {
+    "upstreamFork": false,
+    "mixedContentLicenses": false,
+    "legacyPackageName": false,
+    "thirdPartyBundle": false
+  },
+  "migrationChecklist": [
+    "Track UUID implementation in turbowarp-extension-template issue #35.",
+    "Keep extension IDs, opcodes and argument IDs compatible with saved projects.",
+    "Configure GitHub Pages through the API and verify the published block documentation after repository creation is authorized."
+  ]
+}

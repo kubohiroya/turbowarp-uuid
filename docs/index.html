@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TurboWarpでUUID v4/v7を生成し、UUID形式を判定する拡張機能の使い方。">
+  <title>TurboWarp-UUID — ブロックガイド</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.8; }
+    body { max-width: 800px; margin: 0 auto; padding: 32px 24px 72px; }
+    h1, h2 { line-height: 1.35; } h1 { font-size: clamp(2rem, 7vw, 3.4rem); margin-bottom: 12px; }
+    h2 { margin-top: 48px; } a { color: light-dark(#0f766e, #5eead4); }
+    header { border-bottom: 2px solid #0f766e; padding-bottom: 24px; }
+    .eyebrow { color: light-dark(#0f766e, #5eead4); letter-spacing: .12em; font-size: .85rem; }
+    .block { display: inline-block; border-radius: 24px; padding: 8px 20px; background: #0f766e; color: white; }
+    code { overflow-wrap: anywhere; font-size: .92em; }
+    pre { padding: 16px; border-radius: 8px; background: light-dark(#f1f5f4, #172625); white-space: pre-wrap; }
+    section { scroll-margin-top: 24px; } footer { margin-top: 48px; border-top: 1px solid #78918d; padding-top: 20px; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">TURBOWARP EXTENSION · 0.1.0</p>
+    <h1>TurboWarp-UUID</h1>
+    <p>プロジェクトのデータやイベントに、UUIDの識別子を付けます。v4/v7の生成と形式判定を、3つのブロックで使えます。</p>
+  </header>
+  <nav aria-label="目次">
+    <ul>
+      <li><a href="#start">読み込みと基本の使い方</a></li>
+      <li><a href="#block-generateV4">UUID v4を生成する</a></li>
+      <li><a href="#block-generateV7">UUID v7を生成する</a></li>
+      <li><a href="#block-isUuid">文字列がUUIDか判定する</a></li>
+      <li><a href="#behavior">形式・時刻・実行環境について</a></li>
+    </ul>
+  </nav>
+  <section id="start">
+    <h2>読み込みと基本の使い方</h2>
+    <p>TurboWarpの「拡張機能を追加」→「カスタム拡張機能」で、URL欄に <code>https://kubohiroya.github.io/turbowarp-uuid/dist/turbowarp-uuid.js</code> を指定します。unsandboxed指定は不要です。</p>
+    <p><a href="./dist/turbowarp-uuid.js" download>拡張JSをダウンロード</a>して、ファイルから読み込む方法も使えます。配布契約は<a href="./dist/extension-manifest.json">extension-manifest.json</a>で確認できます。</p>
+    <p>同じUUIDを複数箇所で使うには、生成結果を変数へ保存します。生成ブロックは実行のたびに新しいUUIDを返します。モニター表示は無効です。</p>
+    <pre>緑の旗が押されたとき
+  変数「データID」を (UUID v4を生成する) にする
+  「データID」を使ってデータを保存する</pre>
+  </section>
+  <section id="block-generateV4">
+    <h2>UUID v4を生成する</h2>
+    <p class="block">UUID v4を生成する</p>
+    <p>値を返すブロックです。引数はありません。opcodeは <code>generateV4</code> です。</p>
+    <p>暗号学的に安全な122ビットの乱数から、versionとvariantを設定した小文字・ハイフン付きのUUIDを返します。</p>
+    <pre>例: 919108f7-52d1-4220-9bac-f847db4148a8</pre>
+    <p>時刻を識別子に含める必要がない場合や、通常のデータIDに使用できます。</p>
+  </section>
+  <section id="block-generateV7">
+    <h2>UUID v7を生成する</h2>
+    <p class="block">UUID v7を生成する</p>
+    <p>値を返すブロックです。引数はありません。opcodeは <code>generateV7</code> です。</p>
+    <p>先頭48ビットへ現在のUnix時刻（ミリ秒）を格納し、残りの74ビットに暗号学的乱数を使います。小文字・ハイフン付きのUUIDを返します。</p>
+    <pre>形式の例: 017f22e2-79b0-7cc3-98c4-dc0c0c07398f</pre>
+    <p>異なるミリ秒の時刻が増加する場合は、文字列順が時刻順になります。同じミリ秒内の生成順や、端末の時計が巻き戻った場合の単調増加は保証しません。</p>
+  </section>
+  <section id="block-isUuid">
+    <h2>文字列がUUIDか判定する</h2>
+    <p class="block">[UUID] はUUID？</p>
+    <p>真偽値を返すブロックです。opcodeは <code>isUuid</code>、引数IDは <code>UUID</code>、型は文字列です。既定値は <code>017f22e2-79b0-7cc3-98c4-dc0c0c07398f</code> です。</p>
+    <p>36文字の <code>8-4-4-4-12</code> 形式、versionとvariantを判定します。大文字・小文字は区別しません。RFC variantのv1〜v8、すべて0のNil UUID、すべてfのMax UUIDを受け付けます。</p>
+    <p>空文字、前後の空白・改行、波括弧、<code>urn:uuid:</code> 接頭辞、ハイフン省略、未定義のversion、不正なvariantは <code>false</code> になります。形式の判定であり、一意性・真正性を証明するものではありません。</p>
+    <pre>もし &lt;(入力されたID) はUUID？&gt; なら
+  データを受け付ける
+でなければ
+  「UUIDの形式を確認してください」と言う</pre>
+  </section>
+  <section id="behavior">
+    <h2>形式・時刻・実行環境について</h2>
+    <p>生成にはブラウザの <code>crypto.getRandomValues</code> が必要です。利用できない場合はエラーとなり、弱い乱数を代用しません。UUID形式の判定は乱数APIがなくても動作します。</p>
+    <p>外部通信、外部ライブラリの読み込み、永続化は行いません。v7は生成時刻を含みます。UUIDをパスワードや認証用の秘密値として使わないでください。</p>
+    <p>言語はTurboWarpの設定に従い、日本語と英語に対応します。切り戻しは拡張の読み込み解除です。</p>
+    <p><a href="https://github.com/kubohiroya/turbowarp-uuid">ソースコード</a>はMPL-2.0で公開しています。文書と配布ファイルは、同じコミットのCI成功後にGitHub Pagesへ公開します。</p>
+  </section>
+  <footer>
+    <p>仕様: <a href="https://www.rfc-editor.org/rfc/rfc9562.html">RFC 9562</a> · 作業記録: <a href="https://github.com/kubohiroya/turbowarp-extension-template/issues/35">Issue #35</a> · MPL-2.0</p>
+  </footer>
+</body>
+</html>
