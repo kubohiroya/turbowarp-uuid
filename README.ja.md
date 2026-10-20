@@ -54,7 +54,12 @@ pnpm run lint
 `pnpm run check:dist` は配布ファイルを再ビルドして比較します。`pnpm run check` はプロジェクトの検査を実行します。
 テストは生成済みbundleも実行するため、初回はbuildを先に実行してください。
 
-配布予定のpackageは `@kubohiroya/turbowarp-uuid@0.1.0` です。npm公開はまだ行っていません。
+[`@kubohiroya/turbowarp-uuid@0.1.0`](https://www.npmjs.com/package/@kubohiroya/turbowarp-uuid/v/0.1.0) はnpmにpublicで公開済みです。
+
+```bash
+pnpm add --save-exact @kubohiroya/turbowarp-uuid@0.1.0
+```
+
 生成物は単一JavaScriptの `dist/turbowarp-uuid.js` と `dist/extension-manifest.json` です。
 拡張ID `kubohiroyauuid`、opcode、引数IDは保存済みプロジェクトの互換性契約として扱います。
 
@@ -63,7 +68,7 @@ pnpm run lint
 GitHub repositoryはpublicで、GitHub Pagesのブロックガイドは `https://kubohiroya.github.io/turbowarp-uuid/` です。
 拡張の文書ボタンは、このブロックガイドを開きます。全ブロックの固定アンカーを用意しています。
 mainの同じコミットでCIが成功した後に、説明HTMLと配布用JS・manifestをまとめて公開します。
-PR作成・npm公開は行っていません。
+PR作成は行っていません。
 
 作業の正本は [テンプレートのIssue #35](https://github.com/kubohiroya/turbowarp-extension-template/issues/35) です。
 テンプレートのcommit `033ae362af3d4ae28af122f143dd9831fff65316` を基に独立プロジェクトを作成しました。

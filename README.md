@@ -83,7 +83,12 @@ pnpm run lint
 `pnpm run check:dist` rebuilds and compares the distribution files. `pnpm run check` runs the project checks.
 Tests execute the generated bundle, so build before running tests from a clean checkout.
 
-The prepared package is `@kubohiroya/turbowarp-uuid@0.1.0`; it has not been published to npm.
+The package [`@kubohiroya/turbowarp-uuid@0.1.0`](https://www.npmjs.com/package/@kubohiroya/turbowarp-uuid/v/0.1.0) is published on npm with public access.
+
+```bash
+pnpm add --save-exact @kubohiroya/turbowarp-uuid@0.1.0
+```
+
 The build produces one self-contained `dist/turbowarp-uuid.js` and `dist/extension-manifest.json`.
 The extension ID is `kubohiroyauuid`; opcodes and argument IDs are saved-project compatibility contracts.
 
@@ -93,7 +98,7 @@ Read the [published block guide](https://kubohiroya.github.io/turbowarp-uuid/) o
 Its stable anchors are `#block-generateV4`, `#block-generateV7`, and `#block-isUuid`.
 The extension's `docsURI` opens that guide.
 GitHub Pages deploys the main commit only after its CI succeeds, and serves the documentation and the committed distribution files together.
-The GitHub repository is public. npm publication is separate and has not been performed.
+The GitHub repository and npm package are public.
 
 The implementation is tracked in [template issue #35](https://github.com/kubohiroya/turbowarp-extension-template/issues/35).
 It derives from template commit `033ae362af3d4ae28af122f143dd9831fff65316`.
