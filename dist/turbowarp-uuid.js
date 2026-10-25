@@ -17,7 +17,7 @@
   	license: "MPL-2.0",
   	unsandboxed: false,
   	docsURI: "https://kubohiroya.github.io/turbowarp-uuid/",
-  	blockIconURI: `data:image/svg+xml,${encodeURIComponent("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\"><rect x=\"3\" y=\"7\" width=\"42\" height=\"34\" rx=\"8\" fill=\"#0f766e\"/><text x=\"24\" y=\"30\" text-anchor=\"middle\" fill=\"white\" font-family=\"monospace\" font-size=\"17\">ID</text></svg>")}`
+  	blockIconURI: `data:image/svg+xml,${encodeURIComponent("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 48 48\"><rect x=\"4\" y=\"8\" width=\"40\" height=\"32\" rx=\"6\" fill=\"#8A55D7\"/><text x=\"24\" y=\"29.76\" font-family=\"monospace\" font-size=\"16\" font-weight=\"bold\" text-anchor=\"middle\" fill=\"#fff\">ID</text></svg>")}`
   };
   var block_definitions_default = {
   	extensionName: "TurboWarp-UUID",

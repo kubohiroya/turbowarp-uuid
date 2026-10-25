@@ -1,5 +1,7 @@
 # TurboWarp-UUID
 
+<img src="assets/block-icon.svg" alt="" width="48" height="48">
+
 [日本語](README.ja.md)
 
 Generate UUID v4/v7 and validate UUID strings in TurboWarp.
