@@ -2,7 +2,7 @@
 
 <img src="assets/block-icon.svg" alt="" width="48" height="48">
 
-[English](README.md)
+[English](README.md) | 日本語
 
 TurboWarpでUUID v4/v7を生成し、文字列がUUID形式か判定する拡張機能です。
 
