@@ -70,9 +70,10 @@ Checks a complete, hyphenated UUID string, case-insensitively. Accepts versions 
 
 ## Development
 
-Requires Node.js >=22.18.0 and pnpm 11.11.0.
+Requires Node.js >=24 and pnpm 11.28.8.
 
 ```bash
+npm install --global corepack@latest
 corepack enable
 pnpm install --frozen-lockfile
 pnpm run build

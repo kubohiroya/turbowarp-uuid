@@ -41,9 +41,10 @@ v7には生成時刻が含まれます。同一ミリ秒内の生成順や、時
 
 ## 開発
 
-Node.js >=22.18.0、pnpm 11.11.0を使用します。
+Node.js >=24、pnpm 11.28.8を使用します。
 
 ```bash
+npm install --global corepack@latest
 corepack enable
 pnpm install --frozen-lockfile
 pnpm run build
