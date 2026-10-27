@@ -6,6 +6,15 @@
 
 TurboWarpでUUID v4/v7を生成し、文字列がUUID形式か判定する拡張機能です。
 
+## 実行できるサンプル
+
+[**TurboWarp Editorでデモを開く**](https://turbowarp.org/editor?project_url=https%3A%2F%2Fkubohiroya.github.io%2Fturbowarp-uuid%2Fsamples%2Fgenerate-and-check-uuid.sb3) · [SB3をダウンロード](https://kubohiroya.github.io/turbowarp-uuid/samples/generate-and-check-uuid.sb3)
+
+**Allow**で読み込みを許可し、緑の旗を押します。
+`generateV4`・`generateV7`を変数に保存し、`isUuid`が両方trueになることを表示。サンプルの元データと期待結果は[`samples/README.md`](samples/README.md)に記載しています。
+
+`pnpm run samples:build`でSB3を再生成し、`pnpm run samples:check`で更新漏れと生成処理を確認します。
+
 ## できること
 
 - 暗号学的乱数を使ったUUID v4の生成

@@ -6,6 +6,16 @@ English | [日本語](README.ja.md)
 
 Generate UUID v4/v7 and validate UUID strings in TurboWarp.
 
+## Runnable sample
+
+[**Open the demo in TurboWarp Editor**](https://turbowarp.org/editor?project_url=https%3A%2F%2Fkubohiroya.github.io%2Fturbowarp-uuid%2Fsamples%2Fgenerate-and-check-uuid.sb3) · [Download the SB3](https://kubohiroya.github.io/turbowarp-uuid/samples/generate-and-check-uuid.sb3)
+
+Choose **Allow** and click the green flag.
+Two new UUIDs; both validation results are true.
+
+Editable sources and expected results: [`samples/README.md`](samples/README.md).
+Run `pnpm run samples:build` after source/bundle changes and `pnpm run samples:check` before committing.
+
 ## What it does
 
 - Generates UUID v4 using 122 random bits.

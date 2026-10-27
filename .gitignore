@@ -5,3 +5,6 @@ coverage/
 .claude/
 .playwright-mcp/
 .serena/
+
+# Staged GitHub Pages artifact.
+_site/
