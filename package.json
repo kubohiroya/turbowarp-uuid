@@ -50,8 +50,11 @@
     "check:dist": "node scripts/check-dist.ts",
     "repo:check": "node scripts/check-repo.ts",
     "pack:check": "npm pack --dry-run --ignore-scripts",
-    "check": "pnpm run typecheck && pnpm run lint && pnpm run build && pnpm run test && pnpm run docs:check && pnpm run repo:check && pnpm run pack:check",
-    "prepare": "npm run build"
+    "check": "pnpm run typecheck && pnpm run lint && pnpm run build && pnpm run test && pnpm run docs:check && pnpm run repo:check && pnpm run pack:check && pnpm run samples:check",
+    "prepare": "npm run build",
+    "samples:build": "node scripts/build-samples.mjs",
+    "samples:check": "node scripts/build-samples.mjs --check && node --test scripts/verify-samples.mjs",
+    "pages:build": "node scripts/prepare-pages.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",

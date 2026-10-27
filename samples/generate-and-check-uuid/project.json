@@ -1,0 +1,363 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": {
+        "sample-state": [
+          "Sample state",
+          ""
+        ],
+        "uuid-v4": [
+          "UUID v4",
+          ""
+        ],
+        "uuid-v7": [
+          "UUID v7",
+          ""
+        ],
+        "valid-v4": [
+          "v4 is UUID",
+          ""
+        ],
+        "valid-v7": [
+          "v7 is UUID",
+          ""
+        ]
+      },
+      "lists": {},
+      "broadcasts": {},
+      "blocks": {
+        "b1": {
+          "opcode": "event_whenflagclicked",
+          "parent": null,
+          "next": "b2",
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 35,
+          "y": 35
+        },
+        "b2": {
+          "opcode": "data_setvariableto",
+          "parent": "b1",
+          "next": "b3",
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                "Running"
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "Sample state",
+              "sample-state"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b3": {
+          "opcode": "data_setvariableto",
+          "parent": "b2",
+          "next": "b5",
+          "inputs": {
+            "VALUE": [
+              3,
+              "b4",
+              [
+                10,
+                ""
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "UUID v4",
+              "uuid-v4"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b4": {
+          "opcode": "kubohiroyauuid_generateV4",
+          "parent": "b3",
+          "next": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b5": {
+          "opcode": "data_setvariableto",
+          "parent": "b3",
+          "next": "b7",
+          "inputs": {
+            "VALUE": [
+              3,
+              "b6",
+              [
+                10,
+                ""
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "UUID v7",
+              "uuid-v7"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b6": {
+          "opcode": "kubohiroyauuid_generateV7",
+          "parent": "b5",
+          "next": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b7": {
+          "opcode": "data_setvariableto",
+          "parent": "b5",
+          "next": "b10",
+          "inputs": {
+            "VALUE": [
+              3,
+              "b8",
+              [
+                10,
+                ""
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "v4 is UUID",
+              "valid-v4"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b8": {
+          "opcode": "kubohiroyauuid_isUuid",
+          "parent": "b7",
+          "next": null,
+          "inputs": {
+            "UUID": [
+              3,
+              "b9",
+              [
+                10,
+                ""
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b9": {
+          "opcode": "data_variable",
+          "parent": "b8",
+          "next": null,
+          "inputs": {},
+          "fields": {
+            "VARIABLE": [
+              "UUID v4",
+              "uuid-v4"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b10": {
+          "opcode": "data_setvariableto",
+          "parent": "b7",
+          "next": "b13",
+          "inputs": {
+            "VALUE": [
+              3,
+              "b11",
+              [
+                10,
+                ""
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "v7 is UUID",
+              "valid-v7"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b11": {
+          "opcode": "kubohiroyauuid_isUuid",
+          "parent": "b10",
+          "next": null,
+          "inputs": {
+            "UUID": [
+              3,
+              "b12",
+              [
+                10,
+                ""
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "b12": {
+          "opcode": "data_variable",
+          "parent": "b11",
+          "next": null,
+          "inputs": {},
+          "fields": {
+            "VARIABLE": [
+              "UUID v7",
+              "uuid-v7"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "b13": {
+          "opcode": "data_setvariableto",
+          "parent": "b10",
+          "next": null,
+          "inputs": {
+            "VALUE": [
+              1,
+              [
+                10,
+                "Ready"
+              ]
+            ]
+          },
+          "fields": {
+            "VARIABLE": [
+              "Sample state",
+              "sample-state"
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "",
+          "name": "Instructions",
+          "bitmapResolution": 1,
+          "md5ext": "backdrop.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 240,
+          "rotationCenterY": 180
+        }
+      ],
+      "sounds": [],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "off",
+      "textToSpeechLanguage": null
+    }
+  ],
+  "monitors": [
+    {
+      "id": "uuid-v4",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "UUID v4"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 18,
+      "y": 115,
+      "visible": true,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "uuid-v7",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "UUID v7"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 18,
+      "y": 148,
+      "visible": true,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "valid-v4",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "v4 is UUID"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 18,
+      "y": 181,
+      "visible": true,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    },
+    {
+      "id": "valid-v7",
+      "mode": "default",
+      "opcode": "data_variable",
+      "params": {
+        "VARIABLE": "v7 is UUID"
+      },
+      "spriteName": null,
+      "value": "",
+      "width": 0,
+      "height": 0,
+      "x": 18,
+      "y": 214,
+      "visible": true,
+      "sliderMin": 0,
+      "sliderMax": 100,
+      "isDiscrete": true
+    }
+  ],
+  "extensions": [],
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "0.2.0",
+    "agent": "TurboWarp Plus minimal samples"
+  }
+}

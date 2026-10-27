@@ -1,0 +1,33 @@
+{
+  "baseURL": "https://kubohiroya.github.io/turbowarp-uuid/",
+  "extension": {
+    "id": "kubohiroyauuid",
+    "bundle": "dist/turbowarp-uuid.js",
+    "unsandboxed": false
+  },
+  "samples": [
+    {
+      "name": "generate-and-check-uuid",
+      "title": "Generate and validate UUIDs",
+      "checks": [
+        {
+          "variable": "uuid-v4",
+          "matches": "^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        {
+          "variable": "uuid-v7",
+          "matches": "^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        {
+          "variable": "valid-v4",
+          "equals": true
+        },
+        {
+          "variable": "valid-v7",
+          "equals": true
+        }
+      ],
+      "instructions": "Two new UUIDs; both validation results are true."
+    }
+  ]
+}
