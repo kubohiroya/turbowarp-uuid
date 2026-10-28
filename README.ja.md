@@ -66,10 +66,10 @@ pnpm run lint
 `pnpm run check:dist` は配布ファイルを再ビルドして比較します。`pnpm run check` はプロジェクトの検査を実行します。
 テストは生成済みbundleも実行するため、初回はbuildを先に実行してください。
 
-[`@kubohiroya/turbowarp-uuid@0.3.0`](https://www.npmjs.com/package/@kubohiroya/turbowarp-uuid/v/0.2.0) はnpmにpublicで公開済みです。
+[`@kubohiroya/turbowarp-uuid@0.4.0`](https://www.npmjs.com/package/@kubohiroya/turbowarp-uuid/v/0.2.0) はnpmにpublicで公開済みです。
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-uuid@0.3.0
+pnpm add --save-exact @kubohiroya/turbowarp-uuid@0.4.0
 ```
 
 生成物は単一JavaScriptの `dist/turbowarp-uuid.js` と `dist/extension-manifest.json` です。
