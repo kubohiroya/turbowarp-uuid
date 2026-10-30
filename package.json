@@ -1,6 +1,6 @@
 {
   "name": "@kubohiroya/turbowarp-uuid",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Generate UUID v4/v7 and validate UUID strings in TurboWarp.",
   "author": {
     "name": "Hiroya Kubo",
