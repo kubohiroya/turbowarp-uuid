@@ -96,10 +96,10 @@ pnpm run lint
 `pnpm run check:dist` rebuilds and compares the distribution files. `pnpm run check` runs the project checks.
 Tests execute the generated bundle, so build before running tests from a clean checkout.
 
-The package [`@kubohiroya/turbowarp-uuid@0.4.0`](https://www.npmjs.com/package/@kubohiroya/turbowarp-uuid/v/0.2.0) is published on npm with public access.
+The package [`@kubohiroya/turbowarp-uuid@0.4.1`](https://www.npmjs.com/package/@kubohiroya/turbowarp-uuid/v/0.2.0) is published on npm with public access.
 
 ```bash
-pnpm add --save-exact @kubohiroya/turbowarp-uuid@0.4.0
+pnpm add --save-exact @kubohiroya/turbowarp-uuid@0.4.1
 ```
 
 The build produces one self-contained `dist/turbowarp-uuid.js` and `dist/extension-manifest.json`.
